@@ -22,7 +22,7 @@ function appendCommentToDOM(container, { nickname, content }, isPrepend) {
 $(document).ready(() => {
   let offset = 0
   const commentsDOM = $('.comments')
-  const ajaxUrl = `http://localhost/yiluan/board_api_w12/api_comments.php?site_key=yiluan&offset=${offset}`
+  const ajaxUrl = `http://localhost/week12/hw1/api_comments.php?site_key=yiluan&offset=${offset}`
   $.ajax({
     url: ajaxUrl
   }).done((data) => {
