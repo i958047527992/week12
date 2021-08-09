@@ -34,14 +34,14 @@ function getUrlParameter(sParam) {
   const id = params.has(sParam) ? params.get(sParam) : false
   return id
 }
-
+const apiUrl = 'http://localhost/week12/hw2'
 $(document).ready(() => {
   const todosDOM = $('.todos')
   const id = getUrlParameter('id')
   if (id) {
     $.ajax({
       method: 'GET',
-      url: `http://mentor-program.co/mtr04group3/yiluan/week12hw2/api_get_todos.php?id=${id}`
+      url: `${apiUrl}/api_get_todos.php?id=${id}`
     }).done((data) => {
       if (!data.ok) {
         alert(data.message)
@@ -112,7 +112,7 @@ $(document).ready(() => {
         const todos = { todos: todosJson }
         $.ajax({
           method: 'POST',
-          url: 'http://mentor-program.co/mtr04group3/yiluan/week12hw2/api_add_todos.php',
+          url: `${apiUrl}/api_add_todos.php`,
           data: todos
         }).done((data) => {
           if (!data.ok) {

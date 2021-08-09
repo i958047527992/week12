@@ -19,10 +19,11 @@ function appendCommentToDOM(container, { nickname, content }, isPrepend) {
   `
   isPrepend ? container.prepend(html) : container.append(html)
 }
+const apiUrl = 'http://localhost/week12/hw1'
 $(document).ready(() => {
   let offset = 0
   const commentsDOM = $('.comments')
-  const ajaxUrl = `http://localhost/week12/hw1/api_comments.php?site_key=yiluan&offset=${offset}`
+  const ajaxUrl = `${apiUrl}/api_comments.php?site_key=yiluan&offset=${offset}`
   $.ajax({
     url: ajaxUrl
   }).done((data) => {
@@ -50,7 +51,7 @@ $(document).ready(() => {
     }
     $.ajax({
       type: 'POST',
-      url: 'http://localhost/yiluan/board_api_w12/api_add_comment.php',
+      url: `${apiUrl}/api_add_comment.php`,
       data: newCommentData
     }).done((data) => {
       if (!data.ok) {
@@ -64,7 +65,7 @@ $(document).ready(() => {
     })
   })
   $('.btn-more').click((e) => {
-    const moreAjaxUrl = `http://localhost/yiluan/board_api_w12/api_comments.php?site_key=yiluan&offset=${offset}`
+    const moreAjaxUrl = `${apiUrl}/api_comments.php?site_key=yiluan&offset=${offset}`
     $.ajax({
       url: moreAjaxUrl
     }).done((data) => {
