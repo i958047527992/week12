@@ -19,7 +19,7 @@ function appendCommentToDOM(container, { nickname, content }, isPrepend) {
   `
   isPrepend ? container.prepend(html) : container.append(html)
 }
-const apiUrl = 'http://localhost/week12/hw1'
+const apiUrl = 'http://localhost/var/www/html/week12/hw1'
 $(document).ready(() => {
   let offset = 0
   const commentsDOM = $('.comments')

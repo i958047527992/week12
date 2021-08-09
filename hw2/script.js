@@ -34,7 +34,7 @@ function getUrlParameter(sParam) {
   const id = params.has(sParam) ? params.get(sParam) : false
   return id
 }
-const apiUrl = 'http://localhost/week12/hw2'
+const apiUrl = 'http://localhost/var/www/html/week12/hw2'
 $(document).ready(() => {
   const todosDOM = $('.todos')
   const id = getUrlParameter('id')
